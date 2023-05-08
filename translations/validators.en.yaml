@@ -1,0 +1,116 @@
+common:
+    invalidPassword: Invalid password.
+
+entity:
+    comment:
+        content:
+            notBlank: Content is required.
+            length:
+                max: Content may be {{ limit }} characters long at most.
+
+    tag:
+        uniqueEntity:
+            name: Tag name must be unique.
+        name:
+            notBlank: Tag name is required.
+            length:
+                max: Tag name must be {{ limit }} characters long at most.
+
+    user:
+        uniqueEntity:
+            email: Email is already taken. Please choose another.
+            nick: Nick is already taken. Please choose another.
+        email:
+            notBlank: Email is required.
+            length:
+                max: Email must be {{ limit }} characters at most.
+            email: Email is invalid.
+        birthDate:
+            notBlank: Birth date is required.
+            type: Invalid birth date format.
+            lessThan: You must be at least 5 years old to use this website.
+            greaterThan: Invalid value.
+        nick:
+            notBlank: Nick is required.
+            length:
+                min: Nick must be {{ limit }} characters at least.
+                max: Nick must be {{ limit }} characters at most.
+            regex: Nick may contain only letters, digits, underscores, '-', '+', '.' and '@'.
+    
+    video:
+        name:
+            notBlank: Name is required.
+            length:
+                max: Name must be {{ limit }} characters at most.
+        description:
+            length:
+                max: Description must be {{ limit }} characters at most.
+    
+    userCommentAction:
+        additionalInfo:
+            reason:
+                notBlank: Reason is required.
+                length:
+                    max: Reason must be {{ limit }} characters at most.
+    
+    userVideoAction:
+        additionalInfo:
+            reason:
+                notBlank: Reason is required.
+                length:
+                    max: Reason must be {{ limit }} characters at most.
+
+validator:
+    image:
+        maxSize: Image is too big, maximum size is {{ limit }} {{ suffix }}.
+        extensions: Invalid extension '{{ extension }}' for image. Allowed extensions are {{ extensions }}.
+        mimeTypes: Invalid mime type '{{ extension }}' for image. Allowed extensions are {{ extensions }}.
+        notFound: Image could not be found.
+        notReadable: Image is not readable.
+        uploadCantWriteError: Cannot create temporary image on server.
+        uploadError: Image cannot be uploaded.
+        uploadExtensionError: Cannot upload image because of server configuration.
+        uploadFormSizeError: Image is too big.
+        uploadIniSizeError: Image is too big, maximum size is {{ limit }} {{ suffix }}.
+        uploadNoFileError: Image is missing.
+        uploadNoTmpDirError: Cannot write temporary file on server.
+        uploadPartialError: Image wasn't uploaded fully.
+
+    video:
+        maxSize: Video is too big, maximum size is {{ limit }} {{ suffix }}.
+        extensions: Invalid extension '{{ extension }}' for video. Allowed extensions are {{ extensions }}.
+        mimeTypes: Invalid mime type '{{ extension }}' for video. Allowed extensions are {{ extensions }}.
+        notFound: Video could not be found.
+        notReadable: Video is not readable.
+        uploadCantWriteError: Cannot create temporary video on server.
+        uploadError: Video cannot be uploaded.
+        uploadExtensionError: Cannot upload video because of server configuration.
+        uploadFormSizeError: Video is too big.
+        uploadIniSizeError: Video is too big, maximum size is {{ limit }} {{ suffix }}.
+        uploadNoFileError: Video is missing.
+        uploadNoTmpDirError: Cannot write temporary file on server.
+        uploadPartialError: Video wasn't uploaded fully.
+
+form:
+    repeatedPassword:
+        notBlank: Password is required.
+        length:
+            min: Password must be at least {{ limit }} characters long.
+            max: Password must be at most {{ limit }} characters long.
+        regex: Password must contain lowercase, uppercase letters and digit.
+        match: Both password must match.
+    
+    registration:
+        acceptRegulations:
+            isTrue: You must accept regulations in order to register.
+    
+    video:
+        video:
+            notNull: Video is required.
+        snapshot:
+            notNull: Snapshot is required.
+
+    tagCollection:
+        count:
+            max: There may be 15 tags per video at most.
+        tag: Tag name could contain only lowercase letters, digits, underscores, dashes and dots and be at most {{ limit }} characters long.

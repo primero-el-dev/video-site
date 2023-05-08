@@ -1,0 +1,88 @@
+common:
+    invalidBodyFormat: Invalid body format.
+    forbidden: Forbidden.
+    unauthorized: Unauthorized.
+    http:
+        error_400: Bad Request
+        error_401: Unauthorized
+        error_403: Forbidden
+        error_404: Not Found
+        error_405: Method Not Allowed
+        error_500: Internal Server Error
+
+email:
+    registrationConfirmation:
+        subject: Registration confirmation
+        title: Registration confirmation
+        header: Click link below to confirm your registration.
+        cta: Click here to confirm.
+        footer: If you haven't been registering in our page, just ignore this email.
+    resetPassword:
+        subject: Reset password
+        title: Reset password
+        header: Click link below to reset your password.
+        cta: Click here.
+        footer: If you haven't been trying to reset password in our page, just ignore this email.
+
+controller:
+    registration:
+        register:
+            success: You've created account successfully. We've send you an email confirmation link to fully activate your account.
+        confirm:
+            badToken: Token is invalid or has expired.
+            success: Your account has been verified. You may login now.
+        confirmResend:
+            missingEmail: Email is required.
+            success: If your email is in our database, we'll send you verification email.
+    login:
+        login:
+            alreadyLogged: You're already logged in.
+        logout:
+            success: You've logged out successfully.
+    resetPassword:
+        request:
+            missingEmail: Email is required.
+            success: If your email is in our database, we'll send you link to reset password page.
+        reset:
+            invalidToken: Token is invalid or has expired.
+            success: Password was successfully updated.
+    tag:
+        create:
+            success: Tag was created successfully.
+        update:
+            success: Tag was updated successfully.
+        delete:
+            success: Tag was deleted successfully.
+    video:
+        create:
+            success: Video was added successfully.
+        update:
+            success: Video was updated successfully.
+        delete:
+            success: Video was deleted successfully.
+        rate:
+            success: Video was rated successfully.
+        report:
+            success: Video was reported successfully.
+        reportDelete:
+            success: Video was unreported successfully.
+    comment:
+        index:
+            missingVideo: Missing video.
+        create:
+            success: Comment was added successfully.
+        update:
+            success: Comment was updated successfully.
+        delete:
+            success: Comment was deleted successfully.
+        rate:
+            success: Comment was rated successfully.
+        report:
+            success: Comment was reported successfully.
+        reportDelete:
+            success: Comment was unreported successfully.
+
+security:
+    jsonLoginAuthenticator:
+        success: You've logged in successfully.
+        failure: Wrong credentials.

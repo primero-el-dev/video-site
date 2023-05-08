@@ -1,0 +1,253 @@
+{% extends 'base.html.twig' %}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+{% block body %}
+<main class="container-fluid py-4">
+  <div class="row p-2">
+    <div class="col-12 col-lg-8">
+      <div class="mb-2 background-dark" style="position: relative; width: 100%; padding-top: 56.5%;">
+        <video 
+          id="video" 
+          controls="controls" 
+          src="/videos/video-1648322534-644eccc64e9f8.mp4" 
+          poster="/images/snapshot-644eccc64d5eb.png" 
+          class="vsc-initialized" 
+          data-vscid="esw2rg0of"
+        ></video>
+      </div>
+      <div class="my-3 d-block">
+        <h1 class="d-inline-block fs-5">CAT LICKS BOOT</h1>
+
+        <div class="d-inline-block ms-auto">
+          <button class="btn btn-sm btn-primary ms-1">Edit</button>
+          <button class="btn btn-sm btn-danger ms-1">Delete</button>
+        </div>
+      </div>
+
+      <div class="d-flex flex-column flex-sm-row justify-content-between align-items-center">
+        <!-- <div class="d-inline-block me-auto mb-4"> -->
+          <a class="d-inline-flex align-items-center text-dark me-2 mb-4" href="#" style="text-decoration:none !important;">
+            <div class="flex-shrink-0">
+              <img src="/images/hello-world-644d0f77e417c.bmp" alt="media" class="img-fluid" width="40">
+            </div>
+            <small class="flex-grow-1 ms-2">
+              ABCDEFGHIJKLMNOPQRSTUVWXYZ1234
+            </small>
+          </a>
+        <!-- </div> -->
+
+        <div class="mb-4">
+          <div class="btn-group btn-group-sm d-inline-flex me-1" role="group" aria-label="">
+            <input type="checkbox" class="btn-check" id="btncheck" autocomplete="off">
+            <label class="btn btn-outline-primary" for="btncheck">Subscribe</label>
+          </div>
+
+          <div class="btn-group btn-group-sm d-inline-flex" role="group" aria-label="">
+            <input type="checkbox" class="btn-check" id="btncheck1" autocomplete="off">
+            <label class="btn btn-outline-success" for="btncheck1">Like</label>
+
+            <input type="checkbox" class="btn-check" id="btncheck2" autocomplete="off">
+            <label class="btn btn-outline-danger" for="btncheck2">Dislike</label>
+          </div>
+
+          <!-- <div class="btn-group btn-group-sm d-inline-flex" role="group" aria-label="">
+            <label class="btn btn-outline-success">
+              Like
+              <input type="checkbox" class="btn-check" autocomplete="off" value="on">
+            </label>
+        
+            <label class="btn btn-outline-danger">
+              DisLike
+              <input type="checkbox" class="btn-check" autocomplete="off">
+            </label>
+          </div> -->
+        </div>
+      </div>
+      
+      <div class="accordion accordion-flush" id="accordionFlushExample">
+        <div class="accordion-item">
+          <button class="accordion-button accordion-header collapsed" id="flush-headingOne" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapseOne" aria-expanded="false" aria-controls="flush-collapseOne">
+            Additional info
+          </button>
+          <div id="flush-collapseOne" class="accordion-collapse collapse my-3" aria-labelledby="flush-headingOne" data-bs-parent="#accordionFlushExample">
+            <h5 class="mb-1">TAGS</h5>
+            <div class="mb-4">
+              <small class="tag badge bg-primary me-1">#cat</small>
+              <small class="tag badge bg-primary me-1">#funny</small>
+              <small class="tag badge bg-primary me-1">#cat</small>
+              <small class="tag badge bg-primary me-1">#funny</small>
+              <small class="tag badge bg-primary me-1">#cat</small>
+              <small class="tag badge bg-primary me-1">#funny</small>
+              <small class="tag badge bg-primary me-1">#cat</small>
+              <small class="tag badge bg-primary me-1">#funny</small>
+              <small class="tag badge bg-primary me-1">#cat</small>
+              <small class="tag badge bg-primary me-1">#funny</small>
+              <small class="tag badge bg-primary me-1">#cat</small>
+              <small class="tag badge bg-primary me-1">#funny</small>
+              <small class="tag badge bg-primary me-1">#cat</small>
+              <small class="tag badge bg-primary me-1">#funny</small>
+            </div>
+            
+            <h5 class="mb-1">DESCRIPTION</h5>
+            <div class="mb-4">
+              Placeholder content for this accordion, which is intended to demonstrate the <code>.accordion-flush</code> class. This is the first item's accordion body.
+            </div>
+          </div>
+        </div>
+      </div>
+      
+      <!-- <div class="accordion accordion-flush mb-4" id="accordionComments">
+        <div class="accordion-item">
+          <button class="accordion-button accordion-header collapsed" id="accordionCommentsButton" type="button" data-bs-toggle="collapse" data-bs-target="#accordionCommentsContent" aria-expanded="false" aria-controls="accordionCommentsContent">
+            Comments
+          </button>
+          
+          <div id="accordionCcommentsContent" class="accordion-collapse collapse my-3" aria-labelledby="accordionCommentsButton" data-bs-parent="#accordionComments"> -->
+            <div class="comment my-4">
+              <div class="comment__header d-flex justify-content-between">
+                <a href="#" class="d-inline-flex align-items-center text-dark pe-auto" style="text-decoration:none !important;">
+                  <div class="flex-shrink-0">
+                    <img src="/images/hello-world-644d0f77e417c.bmp" class="img-fluid" width="40">
+                  </div>
+                  <small class="flex-grow-1 ms-2">
+                    ABCDEFGHIJKLMNOPQRSTUVWXY
+                  </small>
+                </a>
+
+                <div class="btn-group btn-group-sm d-inline-flex" role="group" aria-label="">
+                  <input 
+                    type="checkbox" 
+                    class="btn-check" 
+                    id="c1l" 
+                    autocomplete="off" 
+                    checked
+                  >
+                  <label class="btn btn-outline-success" for="c1l">
+                    <i class="fa-sharp fa-light fa-up"></i> 
+                    1
+                  </label>
+
+                  <input 
+                    type="checkbox" 
+                    class="btn-check" 
+                    id="c2d" 
+                    autocomplete="off" 
+                  >
+                  <label class="btn btn-outline-danger" for="c2d">
+                    <i class="fa-sharp fa-light fa-down"></i> 
+                    3
+                  </label>
+
+                  <button id="btnGroupDrop1" type="button" class="btn btn-outline btn-outline-primary dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="false">
+                    
+                  </button>
+                  <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="btnGroupDrop1">
+                    <li><a class="dropdown-item" href="#">Edit</a></li>
+                    <li><a class="dropdown-item" href="#">Dropdown link</a></li>
+                  </ul>
+                </div>
+              </div>
+
+              <div class="comment__content mt-4">
+                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed pharetra massa vitae libero suscipit, ullamcorper semper metus varius. In sit amet elit sollicitudin, mollis sem at, porta nisl. Mauris fermentum erat vitae posuere faucibus. Aliquam faucibus nibh quis dolor egestas, sit amet semper ligula facilisis. Nullam imperdiet ante a nisl gravida, a lacinia elit sodales. Vivamus quis vulputate sapien. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam sodales risus vel maximus semper. Etiam sit amet accumsan massa. Fusce sit amet nisl mauris. Suspendisse porta metus in lectus ultricies vulputate.</p>
+
+                <p>Aenean sollicitudin odio vestibulum lorem convallis, nec scelerisque magna volutpat. Praesent dictum augue eget rhoncus dapibus. Curabitur venenatis augue ac finibus posuere. Vivamus tincidunt justo nulla, ut porttitor nisi condimentum quis. Nunc sit amet elit arcu. Donec sagittis, eros nec convallis ultricies, mauris risus finibus sapien, sed porta ante justo sed nisl. In consequat quam vel purus fermentum sollicitudin. Maecenas posuere convallis sapien. Phasellus ac interdum turpis, in mollis sem. Morbi vestibulum, lorem nec feugiat vestibulum, justo lacus cursus mauris, et euismod arcu ipsum vel elit. Vivamus in semper justo. Pellentesque hendrerit commodo justo rhoncus rutrum. Sed pellentesque massa ut nisl accumsan, non feugiat erat maximus. Vestibulum a mattis odio. Nunc bibendum sapien risus, luctus varius est gravida in.</p>
+              </div>
+
+              <form class="comment__add-sub-form mt-4 mb-5 d-none">
+                <textarea name="" id="" cols="30" rows="4" class="w-100 mb-2"></textarea>
+
+                <button type="button" class="btn btn-block btn-primary w-100">
+                  Save
+                </button>
+              </form>
+              
+              <button class="btn btn-block w-100">
+                Load subcomments
+              </button>
+
+              <div class="comment__subcomments mt-4 ps-4 border-start border-3">
+                <div class="comment my-4">
+                  <div class="comment__header d-flex justify-content-between">
+                    <a href="#" class="d-inline-flex align-items-center text-dark pe-auto" style="text-decoration:none !important;">
+                      <div class="flex-shrink-0">
+                        <img src="/images/hello-world-644d0f77e417c.bmp" class="img-fluid" width="40">
+                      </div>
+                      <small class="flex-grow-1 ms-2">
+                        ABCDEFGHIJKLMNOPQRSTUVWXY
+                      </small>
+                    </a>
+    
+                    <div class="btn-group btn-group-sm d-inline-flex" role="group" aria-label="">
+                      <input 
+                        type="checkbox" 
+                        class="btn-check" 
+                        id="c1l" 
+                        autocomplete="off" 
+                        checked
+                      >
+                      <label class="btn btn-outline-success" for="c1l">
+                        <i class="fa-sharp fa-light fa-up"></i> 
+                        1
+                      </label>
+    
+                      <input 
+                        type="checkbox" 
+                        class="btn-check" 
+                        id="c2d" 
+                        autocomplete="off" 
+                      >
+                      <label class="btn btn-outline-danger" for="c2d">
+                        <i class="fa-sharp fa-light fa-down"></i> 
+                        3
+                      </label>
+                    </div>
+                  </div>
+    
+                  <div class="comment__content mt-4">
+                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed pharetra massa vitae libero suscipit, ullamcorper semper metus varius. In sit amet elit sollicitudin, mollis sem at, porta nisl. Mauris fermentum erat vitae posuere faucibus. Aliquam faucibus nibh quis dolor egestas, sit amet semper ligula facilisis. Nullam imperdiet ante a nisl gravida, a lacinia elit sodales. Vivamus quis vulputate sapien. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam sodales risus vel maximus semper. Etiam sit amet accumsan massa. Fusce sit amet nisl mauris. Suspendisse porta metus in lectus ultricies vulputate.</p>
+    
+                    <p>Aenean sollicitudin odio vestibulum lorem convallis, nec scelerisque magna volutpat. Praesent dictum augue eget rhoncus dapibus. Curabitur venenatis augue ac finibus posuere. Vivamus tincidunt justo nulla, ut porttitor nisi condimentum quis. Nunc sit amet elit arcu. Donec sagittis, eros nec convallis ultricies, mauris risus finibus sapien, sed porta ante justo sed nisl. In consequat quam vel purus fermentum sollicitudin. Maecenas posuere convallis sapien. Phasellus ac interdum turpis, in mollis sem. Morbi vestibulum, lorem nec feugiat vestibulum, justo lacus cursus mauris, et euismod arcu ipsum vel elit. Vivamus in semper justo. Pellentesque hendrerit commodo justo rhoncus rutrum. Sed pellentesque massa ut nisl accumsan, non feugiat erat maximus. Vestibulum a mattis odio. Nunc bibendum sapien risus, luctus varius est gravida in.</p>
+                  </div>
+    
+                  <div class="comment__footer mt-4">
+                    <textarea name="" id="" cols="30" rows="4" class="w-100 mb-2"></textarea>
+    
+                    <button class="btn btn-block btn-primary w-100">
+                      Save
+                    </button>
+                  </div>
+    
+                  <div class="comment__subcomments mt-4">
+                    <div class="comment__subcomments mt-5 ps-4 border-start border-2 border-primary">
+                      
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          <!-- </div>
+        </div>
+      </div> -->
+    </div>
+
+    <div class="col-12 col-lg-4">
+      
+    </div>
+  </div>
+</main>
+
+
+{% endblock %}
