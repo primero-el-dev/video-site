@@ -1,0 +1,169 @@
+{% extends 'base.html.twig' %}
+
+{% block body %}
+<!-- <style>
+    body {
+        font-family: arial;
+    }
+ 
+    .form-group {
+        margin-bottom: 10px;
+    }
+ 
+    input {
+        border: solid lightgrey 1px;
+        padding: 8px;
+    }
+ 
+    label {
+        display: inline-block;
+        min-width: 150px;
+    }
+ 
+    #chat {
+        height: 400px;
+        width: 600px;
+        border: solid lightgrey 1px;
+        overflow: auto;
+        margin-bottom: 20px;
+    }
+ 
+    button {
+        padding: 6px 12px;
+    }
+ 
+    .message {
+        padding: 10px 5px;
+        margin-bottom: 10px;
+        border-bottom: solid lightgrey 1px;
+    }
+</style>
+ 
+<div id="chat"></div>
+
+<div>
+    <div class="form-group">
+        <label for="name">Name:</label> <input type="text" id="name">
+    </div>
+    <div class="form-group">
+        <label for="message">Message:</label> <input type="text" id="message">
+    </div>
+    <button type="button" id="sendBtn">Send</button>
+</div> -->
+
+<div>
+  <nav aria-label="Navbar" class="navbar navbar-expand-sm navbar-dark bg-primary">
+    <div class="container-fluid">
+      <a href="/" class="navbar-brand router-link-active">
+        Social
+      </a>
+      <button type="button" data-bs-toggle="collapse" data-bs-target="#navbar" aria-controls="navbar" aria-expanded="false" aria-label="Toggle navigation" class="navbar-toggler">
+        <span class="navbar-toggler-icon"></span>
+      </button> 
+      <div id="navbar" class="collapse navbar-collapse">
+        <ul class="navbar-nav ms-auto mb-lg-0">
+          <li class="nav-item dropdown me-3">
+            <a href="#" id="navbarDropdown" data-bs-toggle="dropdown" aria-expanded="false" class="nav-link text-center" title="notifications" style="width:3rem; height:3rem; padding-top:.75rem;">
+              <i class="fa fa-bell fa-xl" aria-hidden="true"></i>
+            </a>
+            <ul 
+              aria-labelledby="navbarDropdown" 
+              class="dropdown-menu dropdown-menu-end" 
+              id="notificationsDropdown" 
+            >
+            </ul>
+          </li>
+          
+          <li class="nav-item dropdown">
+            <a href="#" id="navbarDropdown" data-bs-toggle="dropdown" aria-expanded="false" class="nav-link" title="profile" style="width:3rem; height:3rem; background-color:white; border-radius:50rem !important; background:url('/images/no-image.png') no-repeat center center; background-size:cover; background-color:white;">
+              <!-- Account -->
+              <!-- <div style="width:2.5rem; height:2.5rem; background-color:white; vertical-align:center; border-radius:50rem !important; background:url('/images/no-image.png') no-repeat center center; background-size:cover; background-color:white;"> -->
+                <!-- <img src="/images/no-image.png" style="border-radius:20rem; max-width:2.5rem; max-height:2.5rem; margin:auto; background-color:white;"> -->
+              <!-- </div> -->
+            </a>
+            <ul aria-labelledby="navbarDropdown" class="dropdown-menu dropdown-menu-end">
+              <li>
+                <a href="/profile" class="dropdown-item">Profile</a>
+              </li>
+              <li>
+                <a class="dropdown-item">Logout</a>
+              </li>
+            </ul>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+
+  <main class="container-fluid py-4"></main>
+</div>
+
+<style>
+  .notification-dropdown-item {
+    white-space: normal;
+  }
+
+  @media (min-width: 576px) {
+    .notification-dropdown-item {
+      white-space: nowrap;
+    }
+  }
+</style>
+
+<script type="text/javascript">
+    const notificationsDropdown = document.getElementById('notificationsDropdown');
+    const socket = new WebSocket("ws://localhost:3001");
+ 
+    socket.addEventListener("open", function(e) {
+      console.log("CONNECTED");
+    });
+
+    function getNotificationMessage(notification) {
+      let { count, subjectType, subject } = notification;
+      let content = subject.name !== undefined ? subject.name 
+        : subject.content !== undefined ? subject.content 
+        : subject.nick !== undefined ? subject.nick
+        : '';
+      let contentExcerpt = content.length > 20 ? (content.substring(0, 20) + '...') : content;
+      console.log(contentExcerpt)
+
+      switch (notification.action) {
+        case 'like':
+          return `${count} users have liked your ${subjectType}: "${contentExcerpt}"`;
+        case 'dislike':
+          return `${count} users have disliked your ${subjectType}: "${contentExcerpt}"`;
+        case 'report':
+          return `${count} users have reported your ${subjectType}: "${contentExcerpt}"`;
+        case 'subscribe':
+          return `${count} users have subscribed your channel "${contentExcerpt}"`;
+        case 'comment_create':
+          return `${count} users have commented your ${subjectType}: "${contentExcerpt}"`;
+        case 'video_create':
+          return `${count} new videos from channel "${subject.nick}"`;
+      }
+    }
+ 
+    socket.addEventListener("message", function(e) {
+      try {
+        let notifications = JSON.parse(e.data);
+        for (let notification of notifications) {
+          let element = notification.subjectType;
+          let message = getNotificationMessage(notification);
+          let uri = '#';
+          
+          notificationsDropdown.innerHTML += `
+            <li>
+              <a class="dropdown-item notification-dropdown-item" href="${uri}">
+                <small>${message}</small>
+              </a>
+            </li>
+          `;
+        }
+        
+        console.log(notifications);
+      } catch(e) {
+        console.error(e);
+      }
+    });
+</script>
+{% endblock %}

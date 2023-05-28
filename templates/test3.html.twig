@@ -1,0 +1,67 @@
+{% extends 'base.html.twig' %}
+
+{% block body %}
+<div style="position:absolute; top:50%; left:50%; transform:translate(-50%,-50%); text-align:center;">
+  <span class="animation-square bg-primary"></span>
+  <b class="mt-2 text-dark" style="letter-spacing:1px;">Loading...</b>
+</div>
+
+<style>
+
+.animation-square {
+  margin: 1rem auto;
+  display: block;
+  width: 2.5rem;
+  height: 2.5rem;
+  animation: rotation 2s infinite linear;
+}
+
+@keyframes rotation {
+  100% {
+    transform: rotateZ(360deg) rotateX(360deg);
+  }
+}
+
+
+
+
+.rotate {
+  width: 8rem;
+  animation: rotation 1s infinite linear;
+}
+
+:root {
+  --dot-diameter: 2.5rem;
+}
+
+.rotate-dot {
+  display: block;
+  background-color: blue;
+  width: var(--dot-diameter);
+  height: var(--dot-diameter);
+  border-radius: 500px !important;
+}
+
+/* .rotate-dot-1 {
+  transform: 
+} */
+
+.rotate-centered-dot {
+  display: block;
+  background-color: blue;
+  width: var(--dot-diameter);
+  height: var(--dot-diameter);
+  border-radius: 500px !important;
+}
+
+/* @keyframes rotation {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(359deg);
+  }
+} */
+
+</style>
+{% endblock %}

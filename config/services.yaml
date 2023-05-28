@@ -1,0 +1,80 @@
+# This file is the entry point to configure your own services.
+# Files in the packages/ subdirectory configure your dependencies.
+
+# Put parameters here that don't need to change on each machine where the app is deployed
+# https://symfony.com/doc/current/best_practices.html#use-parameters-for-application-configuration
+parameters:
+    remember_me_cookie_name: REMEMBERME
+    ws_auth_token_path: '%kernel.project_dir%/config/ws_auth_token.txt'
+    session_memcached_host: localhost
+    session_memcached_port: 11211
+    session_memcached_prefix: sess
+    session_memcached_expire: 3600
+
+services:
+    # default configuration for services in *this* file
+    _defaults:
+        autowire: true      # Automatically injects dependencies in your services.
+        autoconfigure: true # Automatically registers your services as commands, event subscribers, etc.
+
+    # makes classes in src/ available to be used as services
+    # this creates a service per class whose id is the fully-qualified class name
+    App\:
+        resource: '../src/'
+        exclude:
+            - '../src/DependencyInjection/'
+            - '../src/Entity/'
+            - '../src/Kernel.php'
+
+    # add more service definitions when explicit configuration is needed
+    # please note that last definitions always *replace* previous ones
+
+    _instanceof:
+        App\Messenger\Event\Handler\EventHandlerInterface:
+            tags:
+                - { name: messenger.message_handler, bus: event.bus }
+
+        App\Messenger\Command\Handler\CommandHandlerInterface:
+            tags:
+                - { name: messenger.message_handler, bus: command.bus }
+
+        App\Interfaces\HasWsAuthTokenInterface:
+            calls: 
+                - setWsAuthTokenPath: ['%ws_auth_token_path%']
+
+    App\EventListener\ResponseListener:
+        arguments:
+            - '@security.helper'
+            - '%remember_me_cookie_name%'
+        tags:
+            - { name: kernel.event_subscriber }
+    
+    gedmo.listener.softdeleteable:
+        class: Gedmo\SoftDeleteable\SoftDeleteableListener
+        tags:
+            - { name: doctrine.event_subscriber, connection: default }
+        calls:
+            - [ setAnnotationReader, [ '@annotation_reader' ] ]
+    
+    valid_token_param_converter:
+        class: App\ParamConverter\ValidTokenParamConverter
+        tags: 
+            - { name: 'request.param_converter', converter: 'valid_token_param_converter' }
+    
+    App\EventListener\TagListener:
+        tags:
+            - { name: doctrine.event_listener, event: prePersist }
+
+    session.memcached:
+        class: Memcached
+        arguments:
+            $persistent_id: '%session_memcached_prefix%'
+        calls:
+            - [ addServer, [ '%session_memcached_host%', '%session_memcached_port%' ]]
+
+    session.handler.memcached:
+        class: Symfony\Component\HttpFoundation\Session\Storage\Handler\MemcachedSessionHandler
+        arguments: 
+            - '@session.memcached'
+            - { prefix: '%session_memcached_prefix%', expiretime: '%session_memcached_expire%' }
+    

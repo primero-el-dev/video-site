@@ -1,0 +1,11 @@
+{% extends 'email/layout.html.twig' %}
+
+{% block title %}{{ 'email.registrationConfirmation.title' | trans }}{% endblock %}
+
+{% block body %}
+<p>{{ 'email.registrationConfirmation.header' | trans }}</p>
+<a href="{{ link | raw }}">
+    {{ 'email.registrationConfirmation.cta' | trans }}
+</a>
+<p>{{ 'email.registrationConfirmation.footer' | trans }}</p>
+{% endblock %}

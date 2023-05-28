@@ -1,0 +1,220 @@
+{
+  "app": {
+    "navbar": {
+      "home": "Home",
+      "registration": "Registration",
+      "login": "Login",
+      "logout": "Logout",
+      "accountDropdown": "Account",
+      "profile": "Profile"
+    }
+  },
+  "common": {
+    "goBack": "Go back",
+    "edit": "Edit",
+    "delete": "Delete",
+    "deleted": "Deleted",
+    "added": "Added",
+    "report": "Report",
+    "reason": "Reason",
+    "unreport": "Unreport",
+    "subscribe": "Subscribe",
+    "comment_create": "Create comment",
+    "video_create": "Create video",
+    "playlist_create": "Create playlist",
+    "like": "Like",
+    "dislike": "Dislike",
+    "tags": "Tags",
+    "generalInfo": "General info",
+    "description": "Description",
+    "toggleCommentForm": "Add comment",
+    "submitComment": "Create comment",
+    "loadComments": "Load comments",
+    "toggleSubcommentForm": "Add subcomment",
+    "submitSubcomment": "Create subcomment",
+    "loadSubcomments": "Load subcomments",
+    "reportReason": {
+      "violationOfRules": "Violation of rules",
+      "harmfulContent": "Harmful content",
+      "other": "Other"
+    },
+    "loadMore": "Load more",
+    "now": "Now",
+    "momentAgo": "Moment ago",
+    "minutesAgo": "{minutes} minutes ago",
+    "hoursAgo": "{hours} hours ago",
+    "daysAgo": "{days} days ago",
+    "weeksAgo": "{weeks} weeks ago",
+    "monthsAgo": "{months} months ago",
+    "yearsAgo": "{years} years ago",
+    "views": "Views",
+    "all": "All",
+    "seen": "Seen",
+    "notSeen": "Not seen",
+    "filter": "Filter",
+    "notifications": "Notifications",
+    "markAsRead": "Mark as read",
+    "markAllAsRead": "Mark all as read",
+    "role": {
+      "ROLE_USER": "User",
+      "ROLE_ADMIN": "Admin",
+      "ROLE_SUPER_ADMIN": "Global admin"
+    }
+  },
+  "component": {
+    "commentComponent": {
+      "deleteConfirm": "Are you sure you want to delete this comment?",
+      "reportDeleteConfirm": "Are you sure you want to undo report?"
+    }
+  },
+  "form": {
+    "common": {
+      "email": {
+        "label": "Email address",
+        "placeholder": "Email address"
+      },
+      "password": {
+        "label": "Password",
+        "placeholder": "Password"
+      },
+      "repeatPassword": {
+        "label": "Repeat password",
+        "placeholder": "Repeat password"
+      },
+      "currentPassword": {
+        "label": "Current password",
+        "placeholder": "Current password"
+      },
+      "nick": {
+        "label": "Nick",
+        "placeholder": "Nick"
+      },
+      "userImage": {
+        "label": "Image"
+      },
+      "userBackground": {
+        "label": "Background image"
+      }
+    },
+    "login": {
+      "rememberMe": {
+        "label": "Remember me"
+      }
+    },
+    "comment": {
+      "content": {
+        "label": "Content",
+        "placeholder": "Content"
+      }
+    },
+    "video": {
+      "name": {
+        "label": "Name",
+        "placeholder": "Name"
+      },
+      "description": {
+        "label": "Description",
+        "placeholder": "Description"
+      },
+      "snapshot": {
+        "label": "Snapshot"
+      },
+      "video": {
+        "label": "Video"
+      },
+      "momentAsPoster": "Set current moment as poster",
+      "momentAsSample": "Set current moment as video sample",
+      "mustMakeSnapshot": "You must make a snapshot.",
+      "mustMakeSample": "You must make a sample video."
+    },
+    "videoDelete": {
+      "submit": "Delete",
+      "confirm": "Are you sure you want to delete video '{videoName}'?"
+    },
+    "tags": {
+      "label": "Tags",
+      "error": {
+        "invalidValue": "Tag may only contain lowercase letters, digits, underscores, dashes and dots.",
+        "tooMany": "There may be {limit} tags on one video at most."
+      }
+    }
+  },
+  "page": {
+    "homePage": {
+      "title": "Home",
+      "mainHeader": "Welcome to {appName}!",
+      "secondaryHeader": "The site dedicated to video sharing."
+    },
+    "loginPage": {
+      "title": "Login",
+      "mainHeader": "Login",
+      "submit": "Login",
+      "forgotPassword": "Forgot your password?",
+      "recoverPassword": "Recover it here!",
+      "haveNotVerified": "Haven't verified your account?",
+      "resendVerificationEmail": "Resend verification email."
+    },
+    "registrationPage": {
+      "title": "Registration",
+      "mainHeader": "Registration",
+      "submit": "Register",
+      "alreadyHaveAccount": "Already have an account?",
+      "login": "Login here!",
+      "regulationsModal": {
+        "open": "Accept <a href=\"#\" data-bs-toggle=\"modal\" data-bs-target=\"#regulationsModal\">regulations</a>",
+        "title": "Regulations",
+        "content": "<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris iaculis, nunc vel consequat condimentum, diam metus consequat elit, sit amet accumsan augue arcu sit amet mi. Quisque pulvinar accumsan nisl, at dapibus leo sodales et. Maecenas cursus volutpat lacus, vitae maximus augue pellentesque a. Praesent tempus lorem pretium, bibendum leo sit amet, tempor est. Cras et quam tempor, consectetur mauris a, volutpat ante. Suspendisse mattis est vel elementum sagittis. In eget velit at elit tempor blandit. Sed orci orci, varius non ante vitae, placerat consectetur mi. Suspendisse et elit et mi posuere imperdiet. Proin eleifend velit libero, et ullamcorper mi efficitur ac. Vestibulum lacinia placerat sapien, et fringilla libero suscipit id. Proin elit lacus, rhoncus at finibus non, lacinia in sem.</p><p>In lectus erat, finibus non odio at, dignissim mattis metus. Sed quis ex tempus, volutpat libero a, commodo elit. Curabitur vel bibendum lectus. Pellentesque et efficitur elit, vitae ullamcorper quam. Proin tincidunt lectus molestie nisl laoreet facilisis. Curabitur commodo tellus semper nunc facilisis euismod id a velit. In porta, mi sed scelerisque aliquet, ligula quam porta diam, eget luctus nibh sem et augue. Donec et risus quis sem euismod varius. Curabitur egestas tempus quam, congue sollicitudin nisl. Nulla nec tincidunt sem.</p><p>Praesent posuere nibh mi, ac facilisis dolor finibus eu. Suspendisse ultrices velit vel purus tempus, ac tempor quam molestie. Suspendisse potenti. Mauris imperdiet auctor felis bibendum viverra. Nam dapibus, nibh sed tristique egestas, sapien metus cursus lacus, vitae auctor felis dolor id lectus. Aliquam rhoncus purus id lorem blandit lacinia eu pellentesque nulla. Orci varius natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Morbi consectetur orci non eros maximus rutrum id et dolor. Aliquam sit amet urna augue. Nullam feugiat volutpat ligula, nec sodales urna faucibus vitae. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla porta tincidunt dolor, in vehicula libero feugiat vitae. Interdum et malesuada fames ac ante ipsum primis in faucibus. Sed eleifend egestas orci. Curabitur vitae massa erat.</p><p>Nullam in felis metus. Aliquam porttitor est sed enim sagittis vestibulum. Mauris dui enim, suscipit non ultricies a, laoreet vitae metus. Proin consequat pellentesque pellentesque. Donec posuere vulputate mauris nec fermentum. Nulla ac semper lacus. Fusce tristique nunc lorem, dignissim suscipit turpis dapibus id. Maecenas felis leo, euismod a tempor vel, placerat ut lectus. Morbi semper iaculis scelerisque. Phasellus ultrices diam in massa facilisis, at vestibulum justo lacinia. Maecenas sit amet lorem eu elit condimentum pulvinar eu quis nunc. Vivamus a sem accumsan, fermentum dui eget, vehicula metus. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia curae; Suspendisse at est nec lacus consectetur tincidunt vel sed felis.</p><p>Maecenas vulputate neque et est vulputate, vel porttitor dui porttitor. Sed efficitur, ante vel posuere fermentum, nibh eros rhoncus odio, vitae mollis sem nibh eu enim. Curabitur faucibus dolor sed suscipit lobortis. Nunc mattis non felis sed maximus. Praesent ultrices aliquet arcu, at sollicitudin arcu lobortis non. Nulla egestas augue diam, a eleifend quam convallis eu. Donec pellentesque tincidunt sagittis.</p>"
+      }
+    },
+    "registrationConfirmResendPage": {
+      "title": "Resend verification email",
+      "mainHeader": "Registration confirmation email resend",
+      "submit": "Send"
+    },
+    "resetPasswordRequestPage": {
+      "title": "Reset password",
+      "mainHeader": "Reset password",
+      "submit": "Send email"
+    },
+    "resetPasswordResetPage": {
+      "title": "Set new password",
+      "mainHeader": "Set new password",
+      "submit": "Submit",
+      "goToLogin": "Go to login"
+    },
+    "notificationIndexPage": {
+      "title": "Notifications",
+      "mainHeader": "Notifications",
+      "filterBySeen": "Filter by seen",
+      "filterByReceiver": "Filter by receiver",
+      "filterByType": "Filter by type",
+      "personal": "Personal"
+    },
+    "profileIndexPage": {
+      "title": "Profile",
+      "mainHeader": "Profile",
+      "resetPassword": "Reset password",
+      "createVideo": "Add new video"
+    },
+    "profilePasswordResetPage": {
+      "title": "Set new password",
+      "mainHeader": "Set new password",
+      "submit": "Submit",
+      "goToLogin": "Go to login"
+    },
+    "videoCreatePage": {
+      "title": "Add video",
+      "mainHeader": "Add video",
+      "submit": "Submit"
+    },
+    "videoShowPage": {
+      "videoAdditionalInfo": "Additional info",
+      "videoComments": "Comments"
+    },
+    "videoEditPage": {
+      "title": "Edit video",
+      "mainHeader": "Edit video",
+      "submit": "Submit"
+    }
+  }
+}
